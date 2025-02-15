@@ -1,0 +1,396 @@
+/* 职业发展页面样式 */
+.careers-section {
+    padding: 40px 40px 0 40px;  /* 保留顶部和两侧内边距，移除底部内边距 */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0;  /* 确保没有外边距 */
+    min-width: 100%;  /* 确保宽度填充 */
+    height: 100%;  /* 确保高度填充 */
+}
+
+/* 添加背景光效 */
+.careers-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 98, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 98, 255, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 职业发展介绍卡片样式 */
+.careers-intro-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out backwards;
+    text-align: center;
+}
+
+.careers-intro-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 添加动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 调整主内容区样式 */
+.main-content {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .careers-section {
+        padding: 20px 20px 0 20px;  /* 保留顶部和两侧内边距，移除底部内边距 */
+    }
+
+    .careers-intro-card {
+        padding: 30px;
+        width: 95%;
+    }
+
+    .careers-intro-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-content {
+        font-size: 1rem;
+    }
+}
+
+/* 职业发展机会样式 */
+.career-opportunities {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.2s;
+}
+
+.career-opportunities h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.opportunity-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.opportunity-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.opportunity-card h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.opportunity-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .career-opportunities {
+        padding: 30px;
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .career-opportunities h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .opportunity-card {
+        padding: 25px;
+    }
+
+    .opportunity-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 人才理念样式 */
+.talent-philosophy {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+}
+
+.talent-philosophy h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.philosophy-icon {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.philosophy-card h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.philosophy-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .talent-philosophy {
+        padding: 30px;
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .talent-philosophy h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .philosophy-card {
+        padding: 20px;
+    }
+
+    .philosophy-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .philosophy-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 加入我们部分样式 */
+.join-us-section {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.expectations,
+.benefits {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.expectations {
+    animation-delay: 0.3s;
+}
+
+.benefits {
+    animation-delay: 0.4s;
+}
+
+.join-us-section h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.expectations-list,
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.expectations-list li,
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.expectations-list li:hover,
+.benefits-list li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.list-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.expectations-list p,
+.benefits-list p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .join-us-section {
+        grid-template-columns: 1fr;
+        width: 95%;
+        margin: 40px auto;
+        gap: 20px;
+    }
+
+    .expectations,
+    .benefits {
+        padding: 30px;
+    }
+
+    .join-us-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .expectations-list li,
+    .benefits-list li {
+        padding: 12px;
+    }
+
+    .list-icon {
+        font-size: 1.6rem;
+    }
+
+    .expectations-list p,
+    .benefits-list p {
+        font-size: 0.95rem;
+    }
+} 

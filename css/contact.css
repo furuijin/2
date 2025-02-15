@@ -1,0 +1,265 @@
+/* 联系我们页面样式 */
+.contact-section {
+    padding: 40px 40px 0 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0;
+    min-width: 100%;
+    height: 100%;
+}
+
+/* 添加背景光效 */
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 98, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 98, 255, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 主内容区样式 */
+.main-content {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 联系我们介绍卡片样式 */
+.contact-intro-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.contact-intro-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contact-intro-card .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 联系信息和地图部分 */
+.contact-info-map {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-info,
+.contact-map {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.contact-info h3,
+.contact-form-section h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.info-list li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.info-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.map-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.map-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* 联系表单部分 */
+.contact-form-section {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group:last-child {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: 15px 30px;
+    background: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1976D2;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 20px 20px 0 20px;
+    }
+
+    .contact-intro-card {
+        padding: 30px;
+        width: 95%;
+    }
+
+    .contact-intro-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info-map {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .contact-form-section {
+        padding: 30px;
+        width: 95%;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group:last-child {
+        grid-column: auto;
+    }
+} 

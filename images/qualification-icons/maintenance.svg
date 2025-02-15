@@ -1,0 +1,29 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="25" cy="25" r="20" fill="url(#maint_bg)"/>
+    <!-- 扳手 -->
+    <path d="M20 20L30 30L32 28L22 18L20 20Z" fill="url(#wrench_gradient)"/>
+    <path d="M19 21C17 19 17 16 19 14C21 12 24 12 26 14L21 19L19 21Z" 
+          fill="url(#wrench_head_gradient)"/>
+    <!-- 螺丝 -->
+    <circle cx="31" cy="29" r="3" fill="url(#screw_gradient)" stroke="#FFFFFF"/>
+    <path d="M31 27V31M29 29H33" stroke="#FFFFFF" stroke-width="1"/>
+    <defs>
+        <linearGradient id="maint_bg" x1="25" y1="5" x2="25" y2="45">
+            <stop offset="0%" stop-color="#455A64"/>
+            <stop offset="100%" stop-color="#37474F"/>
+        </linearGradient>
+        <linearGradient id="wrench_gradient" x1="26" y1="18" x2="26" y2="30">
+            <stop offset="0%" stop-color="#90A4AE"/>
+            <stop offset="100%" stop-color="#78909C"/>
+        </linearGradient>
+        <linearGradient id="wrench_head_gradient" x1="22.5" y1="12" x2="22.5" y2="21">
+            <stop offset="0%" stop-color="#B0BEC5"/>
+            <stop offset="100%" stop-color="#90A4AE"/>
+        </linearGradient>
+        <linearGradient id="screw_gradient" x1="31" y1="26" x2="31" y2="32">
+            <stop offset="0%" stop-color="#CFD8DC"/>
+            <stop offset="100%" stop-color="#B0BEC5"/>
+        </linearGradient>
+    </defs>
+</svg> 

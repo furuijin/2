@@ -1,0 +1,29 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="25" cy="25" r="20" fill="url(#building_bg)"/>
+    <!-- 建筑主体 -->
+    <path d="M15 35V20L25 15L35 20V35H15Z" fill="url(#building_gradient)"/>
+    <!-- 窗户 -->
+    <rect x="18" y="23" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="28" y="23" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="18" y="29" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="28" y="29" width="4" height="4" fill="#FFFFFF"/>
+    <!-- 门 -->
+    <path d="M23 35V30H27V35" fill="url(#door_gradient)"/>
+    <!-- 装饰线 -->
+    <path d="M15 35H35" stroke="#FFFFFF" stroke-width="1"/>
+    <defs>
+        <linearGradient id="building_bg" x1="25" y1="5" x2="25" y2="45">
+            <stop offset="0%" stop-color="#5C6BC0"/>
+            <stop offset="100%" stop-color="#3949AB"/>
+        </linearGradient>
+        <linearGradient id="building_gradient" x1="25" y1="15" x2="25" y2="35">
+            <stop offset="0%" stop-color="#7986CB"/>
+            <stop offset="100%" stop-color="#5C6BC0"/>
+        </linearGradient>
+        <linearGradient id="door_gradient" x1="25" y1="30" x2="25" y2="35">
+            <stop offset="0%" stop-color="#9FA8DA"/>
+            <stop offset="100%" stop-color="#7986CB"/>
+        </linearGradient>
+    </defs>
+</svg> 

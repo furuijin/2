@@ -1,0 +1,98 @@
+/* 文件上传安全相关样式 */
+.secure-upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9;
+    position: relative;
+}
+
+.secure-upload-container.drag-over {
+    border-color: #4CAF50;
+    background: #E8F5E9;
+}
+
+.file-validation-progress {
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.validation-results {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 300px;
+    z-index: 1000;
+}
+
+.validation-result {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.validation-result.valid {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+    border-left: 4px solid #4CAF50;
+}
+
+.validation-result.invalid {
+    background-color: #FFEBEE;
+    color: #C62828;
+    border-left: 4px solid #F44336;
+}
+
+.file-name {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.message {
+    font-size: 0.9em;
+}
+
+/* 安全提示图标 */
+.security-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* 文件类型图标 */
+.file-type-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* 进度条样式 */
+.scan-progress {
+    height: 4px;
+    background: #E0E0E0;
+    margin-top: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.scan-progress-bar {
+    height: 100%;
+    background: #4CAF50;
+    width: 0;
+    transition: width 0.3s ease-out;
+}
+
+/* 警告提示 */
+.security-warning {
+    background-color: #FFF3E0;
+    color: #E65100;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+} 

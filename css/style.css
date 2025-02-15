@@ -1,0 +1,533 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Microsoft YaHei', sans-serif;
+    overflow: hidden; /* 防止整体滚动 */
+}
+
+/* 左侧导航栏样式 */
+.side-nav {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    /* 更新背景图片和渐变效果 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url('../images/nav-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* 公司Logo样式优化 */
+.company-logo {
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    /* 调整Logo背景透明度 */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    /* 调整文字阴影以适应新背景 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    to {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5),
+                     0 0 12px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* 导航菜单样式优化 */
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+    /* 添加滚动效果 */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.nav-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.nav-menu li {
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加悬停效果 */
+.nav-menu a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-4px);
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    padding-left: 35px;
+}
+
+.nav-menu a:hover:before {
+    transform: translateX(0);
+}
+
+.nav-menu a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+/* 主要内容区样式 */
+.main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow: hidden; /* 防止右侧滚动 */
+    position: relative; /* 添加相对定位 */
+    height: 100vh; /* 确保全屏高度 */
+}
+
+/* 标语展示区样式优化 */
+.slogan-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../images/main-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+/* 添加科技感动态效果 */
+.slogan-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(4, 78, 146, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(0, 4, 40, 0.5) 0%, transparent 50%);
+    animation: glowEffect 10s ease-in-out infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* 内容居中容器 */
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* 减去版权信息的高度 */
+}
+
+/* 调整内容包装器 */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* 修改标语容器样式 */
+.slogan-container {
+    text-align: center;
+    color: #fff;
+    padding: 3rem 4rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease-out;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
+
+.main-slogan {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: slideInDown 1s ease-out;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sub-slogan {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 1s ease-out;
+    opacity: 0.9;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .main-slogan {
+        font-size: 2rem;
+    }
+    
+    .sub-slogan {
+        font-size: 1.2rem;
+    }
+}
+
+/* 浮窗卡片样式 */
+.floating-cards {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    z-index: 10;
+    margin: 0;
+    padding: 20px;
+}
+
+.float-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 600px; /* 增加宽度以适应两列布局 */
+    color: #fff;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: floatIn 0.8s ease-out forwards;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.float-card:hover {
+    transform: translateX(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.float-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.float-card ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.float-card ul li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 为每个卡片设置不同的动画延迟 */
+.service-card {
+    animation-delay: 0.3s;
+}
+
+.innovation-card {
+    animation-delay: 0.6s;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.innovation-card .card-icon {
+    background: linear-gradient(45deg, rgba(64, 144, 255, 0.3), rgba(128, 0, 255, 0.3));
+    animation: pulse 2s infinite;
+}
+
+.innovation-card h3 {
+    background: linear-gradient(90deg, #4090ff, #8000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.innovation-card .service-list li {
+    border-left-color: rgba(64, 144, 255, 0.3);
+}
+
+.innovation-card .service-list li:hover {
+    border-left-color: #4090ff;
+    background: linear-gradient(90deg, rgba(64, 144, 255, 0.1), transparent);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(64, 144, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(64, 144, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(64, 144, 255, 0);
+    }
+}
+
+/* 浮入动画 */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 服务图标 */
+.service-icon {
+    width: 30px;
+    height: 30px;
+    background: url('../images/service-icon.svg') no-repeat center;
+    background-size: contain;
+}
+
+/* 创新图标 */
+.innovation-icon {
+    width: 30px;
+    height: 30px;
+    background: url('../images/innovation-icon.svg') no-repeat center;
+    background-size: contain;
+}
+
+/* 服务列表样式优化 */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+    gap: 15px 30px; /* 行间距和列间距 */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.service-list li {
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap; /* 确保文字不换行 */
+}
+
+.service-list li:hover {
+    border-left-color: rgba(255, 255, 255, 0.8);
+    padding-left: 25px;
+    opacity: 1;
+}
+
+/* 移除遮罩效果 */
+.service-list::after {
+    display: none;
+}
+
+/* 版权信息样式 */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.1)
+    );
+    backdrop-filter: blur(5px);
+}
+
+.copyright p {
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1200px) {
+    .float-card {
+        width: 500px;
+        padding: 25px;
+    }
+    
+    .service-list li {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .float-card {
+        width: 90%;
+        max-width: 500px;
+    }
+    
+    .service-list {
+        grid-template-columns: 1fr; /* 在小屏幕上改为单列 */
+    }
+}
+
+.hero-section {
+    background: url('../images/bg-home.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+/* 添加背景遮罩，确保文字清晰可见 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 半透明黑色遮罩 */
+    z-index: 1;
+} 

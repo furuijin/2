@@ -1,0 +1,31 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="25" cy="25" r="20" fill="url(#dec_bg)"/>
+    <!-- 画笔 -->
+    <path d="M20 30L30 20L32 22L22 32L20 30Z" fill="url(#brush_gradient)"/>
+    <path d="M19 31L17 33L15 35H20L22 33L20 31L19 31Z" fill="url(#handle_gradient)"/>
+    <!-- 色板 -->
+    <path d="M28 22C26 20 26 17 28 15C30 13 33 13 35 15C37 17 37 20 35 22L28 22Z" 
+          fill="url(#palette_gradient)"/>
+    <!-- 颜色点 -->
+    <circle cx="30" cy="17" r="1.5" fill="#FF5252"/>
+    <circle cx="33" cy="17" r="1.5" fill="#FFEB3B"/>
+    <defs>
+        <linearGradient id="dec_bg" x1="25" y1="5" x2="25" y2="45">
+            <stop offset="0%" stop-color="#9C27B0"/>
+            <stop offset="100%" stop-color="#7B1FA2"/>
+        </linearGradient>
+        <linearGradient id="brush_gradient" x1="26" y1="20" x2="26" y2="32">
+            <stop offset="0%" stop-color="#CE93D8"/>
+            <stop offset="100%" stop-color="#BA68C8"/>
+        </linearGradient>
+        <linearGradient id="handle_gradient" x1="18.5" y1="31" x2="18.5" y2="35">
+            <stop offset="0%" stop-color="#AB47BC"/>
+            <stop offset="100%" stop-color="#9C27B0"/>
+        </linearGradient>
+        <linearGradient id="palette_gradient" x1="31.5" y1="13" x2="31.5" y2="22">
+            <stop offset="0%" stop-color="#E1BEE7"/>
+            <stop offset="100%" stop-color="#CE93D8"/>
+        </linearGradient>
+    </defs>
+</svg> 

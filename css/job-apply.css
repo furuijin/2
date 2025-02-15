@@ -1,0 +1,411 @@
+/* 申请表单页面样式 */
+.apply-section {
+    padding: 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    min-width: 100%;
+    height: 100%;
+}
+
+.apply-form-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    color: #fff;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.apply-form-card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.position-title {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.application-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.required {
+    color: #ff4444;
+    margin-left: 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.file-hint {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+    background: #2196F3;
+    color: #fff;
+    border: none;
+}
+
+.submit-btn:hover {
+    background: #1976D2;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 隐私声明样式 */
+.privacy-notice {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.privacy-link {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+/* 帮助和反馈样式 */
+.help-feedback {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.help-feedback p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.help-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.help-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.help-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 隐私政策弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-content h3 {
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+.privacy-content {
+    color: #333;
+    line-height: 1.6;
+}
+
+.privacy-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #1976D2;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .apply-section {
+        padding: 20px;
+    }
+
+    .apply-form-card {
+        padding: 30px;
+        width: 95%;
+    }
+
+    .application-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .submit-btn,
+    .cancel-btn {
+        width: 100%;
+    }
+
+    .help-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .help-link {
+        justify-content: center;
+    }
+
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+}
+
+/* 文件预览样式 */
+.file-preview {
+    margin-top: 15px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.preview-item img {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.file-icon {
+    font-size: 2rem;
+}
+
+.file-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+/* 自定义文件上传按钮样式 */
+input[type="file"] {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 上传成功提示样式 */
+.upload-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(46, 125, 50, 0.9);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+.success-icon {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-text {
+    font-size: 1rem;
+}
+
+.upload-notification.fade-out {
+    animation: slideOut 0.3s ease-in forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* 主内容区样式 */
+.main-content {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
+} 

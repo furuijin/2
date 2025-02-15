@@ -1,0 +1,789 @@
+/* 关于我们页面样式 */
+.about-section {
+    padding: 40px;
+    height: 100vh;
+    background: linear-gradient(135deg, 
+        rgba(25, 95, 160, 0.9), 
+        rgba(45, 120, 190, 0.9),
+        rgba(65, 145, 220, 0.9)
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    padding-bottom: 40px;
+}
+
+/* 自定义滚动条样式 */
+.about-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.about-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.about-section::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.about-section::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox 滚动条样式 */
+.about-section {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+}
+
+/* 添加动态背景效果 */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+    animation: shimmer 10s infinite alternate;
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* 调整主内容区样式 */
+.main-content {
+    padding: 0;
+    overflow: hidden;
+    position: relative; /* 确保子元素的绝对定位相对于它 */
+    height: 100vh;
+}
+
+/* 公司简介卡片样式 */
+.company-intro-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px; /* 增加最大宽度 */
+    width: 90%; /* 设置相对宽度 */
+    margin: 0 auto;
+    margin-top: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out, glowPulse 3s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加光效动画 */
+.company-intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+.company-intro-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.intro-content p {
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 添加动画关键帧 */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+            0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.2),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* 公司使命卡片样式 */
+.mission-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto 0;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.mission-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mission-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mission-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    animation: slideInRight 0.5s ease-out backwards;
+}
+
+.mission-item:nth-child(1) { animation-delay: 0.5s; }
+.mission-item:nth-child(2) { animation-delay: 0.7s; }
+.mission-item:nth-child(3) { animation-delay: 0.9s; }
+
+.mission-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 使命图标样式 */
+.mission-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.mission-icon:hover {
+    transform: translateY(-2px);
+}
+
+.mission-item:nth-child(1) .mission-icon {
+    background: url('../images/mission-icons/mission1.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.mission-item:nth-child(2) .mission-icon {
+    background: url('../images/mission-icons/mission2.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.mission-item:nth-child(3) .mission-icon {
+    background: url('../images/mission-icons/mission3.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.mission-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    animation: pulse 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.mission-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 公司愿景卡片样式 */
+.vision-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto 0;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.vision-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.vision-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.5s ease-out backwards;
+}
+
+.vision-item:nth-child(1) { animation-delay: 0.8s; }
+.vision-item:nth-child(2) { animation-delay: 1s; }
+.vision-item:nth-child(3) { animation-delay: 1.2s; }
+
+.vision-item:hover {
+    transform: translateX(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 愿景图标样式 */
+.vision-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.vision-icon:hover {
+    transform: translateY(-2px);
+}
+
+.vision-item:nth-child(1) .vision-icon {
+    background: url('../images/vision-icons/vision1.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.vision-item:nth-child(2) .vision-icon {
+    background: url('../images/vision-icons/vision2.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.vision-item:nth-child(3) .vision-icon {
+    background: url('../images/vision-icons/vision3.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.vision-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 公司资质卡片样式 */
+.qualification-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out 0.9s backwards;
+}
+
+.qualification-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.qualification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.qualification-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.qualification-item:nth-child(1) { animation-delay: 1.1s; }
+.qualification-item:nth-child(2) { animation-delay: 1.2s; }
+.qualification-item:nth-child(3) { animation-delay: 1.3s; }
+.qualification-item:nth-child(4) { animation-delay: 1.4s; }
+.qualification-item:nth-child(5) { animation-delay: 1.5s; }
+.qualification-item:nth-child(6) { animation-delay: 1.6s; }
+
+.qualification-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 资质图标样式 */
+.qualification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.qualification-icon:hover {
+    transform: translateY(-2px);
+}
+
+.qualification-icon.safety {
+    background: url('../images/qualification-icons/safety-cert.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-icon.enterprise {
+    background: url('../images/qualification-icons/enterprise.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-icon.engineering {
+    background: url('../images/qualification-icons/engineering.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-icon.decoration {
+    background: url('../images/qualification-icons/decoration.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-icon.maintenance {
+    background: url('../images/qualification-icons/maintenance.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-icon.assessment {
+    background: url('../images/qualification-icons/assessment.svg') no-repeat center;
+    background-size: contain;
+}
+
+.qualification-content {
+    flex-grow: 1;
+}
+
+.qualification-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.qualification-content p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 公司价值观卡片样式 */
+.values-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 30px auto 0;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.values-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.value-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out backwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+}
+
+.value-item:nth-child(1) { animation-delay: 0.7s; }
+.value-item:nth-child(2) { animation-delay: 0.8s; }
+.value-item:nth-child(3) { animation-delay: 0.9s; }
+.value-item:nth-child(4) { animation-delay: 1.0s; }
+.value-item:nth-child(5) { animation-delay: 1.1s; }
+.value-item:nth-child(6) { animation-delay: 1.2s; }
+.value-item:nth-child(7) { animation-delay: 1.3s; }
+.value-item:nth-child(8) { animation-delay: 1.4s; }
+
+.value-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    animation: pulse 2s infinite;
+}
+
+.value-item h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.value-item p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1400px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        padding: 20px;
+    }
+
+    .company-intro-card {
+        width: 95%;
+        padding: 30px;
+    }
+
+    .company-intro-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-content {
+        font-size: 1rem;
+    }
+
+    .mission-card {
+        padding: 30px;
+    }
+
+    .mission-item {
+        padding: 12px 15px;
+    }
+
+    .mission-item p {
+        font-size: 1rem;
+    }
+
+    .vision-card {
+        padding: 30px;
+    }
+
+    .vision-item {
+        padding: 12px 15px;
+    }
+
+    .vision-item p {
+        font-size: 1rem;
+    }
+
+    .qualification-card {
+        padding: 30px;
+    }
+
+    .qualification-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .qualification-item {
+        padding: 15px;
+    }
+
+    .qualification-content h3 {
+        font-size: 1rem;
+    }
+
+    .qualification-content p {
+        font-size: 0.85rem;
+    }
+
+    .values-card {
+        padding: 30px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .value-item {
+        padding: 20px 15px;
+        min-width: auto;
+    }
+
+    .value-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .value-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 价值观图标样式 */
+.value-icon.integrity {
+    background: url('../images/value-icons/integrity.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.innovation {
+    background: url('../images/value-icons/innovation.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.professional {
+    background: url('../images/value-icons/professional.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.safety {
+    background: url('../images/value-icons/safety.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.responsibility {
+    background: url('../images/value-icons/responsibility.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.efficiency {
+    background: url('../images/value-icons/efficiency.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.service {
+    background: url('../images/value-icons/service.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.value-icon.cooperation {
+    background: url('../images/value-icons/cooperation.svg') no-repeat center;
+    background-size: 60%;
+} 

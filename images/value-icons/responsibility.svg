@@ -1,0 +1,25 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="30" cy="30" r="25" fill="url(#responsibility_bg)"/>
+    <!-- 时钟外圈 -->
+    <circle cx="30" cy="30" r="18" fill="url(#clock_gradient)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- 时钟指针 -->
+    <path d="M30 18V30L38 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <!-- 时钟刻度 -->
+    <path d="M30 15V17" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M30 43V45" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M15 30H17" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M43 30H45" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- 中心点 -->
+    <circle cx="30" cy="30" r="2" fill="#FFFFFF"/>
+    <defs>
+        <linearGradient id="responsibility_bg" x1="30" y1="5" x2="30" y2="55">
+            <stop offset="0%" stop-color="#5C6BC0"/>
+            <stop offset="100%" stop-color="#3949AB"/>
+        </linearGradient>
+        <linearGradient id="clock_gradient" x1="30" y1="12" x2="30" y2="48">
+            <stop offset="0%" stop-color="#7986CB"/>
+            <stop offset="100%" stop-color="#5C6BC0"/>
+        </linearGradient>
+    </defs>
+</svg> 

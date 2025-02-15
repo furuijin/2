@@ -1,0 +1,1076 @@
+/* 服务页面样式 */
+.services-section {
+    padding: 40px 40px 0 40px;  /* 移除底部内边距 */
+    min-height: 100vh;
+    /* 添加渐变背景 */
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100vh;
+    margin: 0;  /* 确保没有外边距 */
+    min-width: 100%;  /* 确保宽度填充 */
+    height: 100%;  /* 确保高度填充 */
+}
+
+/* Webkit浏览器的滚动条样式 */
+.services-section::-webkit-scrollbar {
+    width: 8px;  /* 滚动条宽度 */
+}
+
+.services-section::-webkit-scrollbar-track {
+    background: transparent;  /* 滚动条轨道背景 */
+}
+
+.services-section::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);  /* 滚动条颜色 */
+    border-radius: 4px;  /* 滚动条圆角 */
+    border: 2px solid transparent;  /* 滚动条边框 */
+}
+
+.services-section::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);  /* 悬停时的颜色 */
+}
+
+/* 添加背景光效 */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 98, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 98, 255, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 确保内容在背景效果之上 */
+.services-intro-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 50px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease-out backwards;
+    text-align: center;  /* 文本居中 */
+}
+
+.services-intro-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .services-section {
+        padding: 20px 20px 0 20px;  /* 移除底部内边距 */
+    }
+
+    .services-intro-card,
+    .emergency-info,
+    .services-grid,
+    .construction-section,
+    .inspection-section,
+    .maintenance-section,
+    .assessment-section,
+    .acceptance-section,
+    .mission-section {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services-intro-card {
+        padding: 30px;
+        margin-bottom: 30px;  /* 移动端稍微减小底部间距 */
+    }
+
+    .services-intro-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-content {
+        font-size: 1rem;
+    }
+}
+
+/* 添加动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 紧急服务信息样式 */
+.emergency-info {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;  /* 文本居中 */
+    justify-content: center;  /* 确保子元素水平居中 */
+    margin-bottom: 60px;
+}
+
+.emergency-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: slideIn 0.5s ease-out backwards;
+    transition: all 0.3s ease;
+    text-align: center;  /* 文本居中 */
+}
+
+.emergency-card:first-child {
+    animation-delay: 0.1s;
+}
+
+.emergency-card:last-child {
+    animation-delay: 0.2s;
+}
+
+.emergency-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.emergency-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emergency-content h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.emergency-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 调整主内容区样式 */
+.main-content {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: visible;
+}
+
+/* 服务卡片网格样式 */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto 0;
+    position: relative;
+    z-index: 2;
+    text-align: center;  /* 文本居中 */
+    justify-content: center;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease-out backwards;
+    transition: all 0.3s ease;
+    text-align: center;  /* 文本居中 */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.service-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-content h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.service-content p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* 添加动画延迟 */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+/* ... 依此类推 */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 消防检测部分样式 */
+.inspection-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+    text-align: center;  /* 文本居中 */
+}
+
+.inspection-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.inspection-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inspection-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.inspection-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: center;  /* 文本居中 */
+    justify-content: center;
+}
+
+.inspection-types {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;  /* 文本居中 */
+}
+
+.inspection-types h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.inspection-types ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inspection-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+.inspection-types li::before {
+    content: "•";
+    color: #4CAF50;
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+.inspection-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;  /* 网格内容居中 */
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 消防维护部分样式 */
+.maintenance-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+    text-align: center;  /* 文本居中 */
+}
+
+.maintenance-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.maintenance-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.maintenance-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.maintenance-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: center;  /* 文本居中 */
+    justify-content: center;
+}
+
+.maintenance-types {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.maintenance-types h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.maintenance-types ul {
+    list-style: none;
+    padding: 0;
+}
+
+.maintenance-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+.maintenance-types li::before {
+    content: "•";
+    color: #2196F3;  /* 使用不同的颜色区分检测部分 */
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+.maintenance-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;  /* 网格内容居中 */
+}
+
+/* 消防安全评估部分样式 */
+.assessment-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+    text-align: center;  /* 文本居中 */
+}
+
+.assessment-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.assessment-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.assessment-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.assessment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: center;  /* 文本居中 */
+    justify-content: center;
+}
+
+.assessment-types {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.assessment-types h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.assessment-types ul {
+    list-style: none;
+    padding: 0;
+}
+
+.assessment-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+.assessment-types li::before {
+    content: "•";
+    color: #FF9800;  /* 使用橙色区分评估部分 */
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+.assessment-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;  /* 网格内容居中 */
+}
+
+/* 使命部分样式 */
+.mission-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    text-align: center;  /* 文本居中 */
+}
+
+.mission-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.mission-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+    text-align: center;  /* 文本居中 */
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.value-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.service-promises {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.service-promises h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.promise-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.promise-list li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    justify-content: center;  /* 列表项内容居中 */
+}
+
+.promise-list li:hover {
+    transform: translateX(10px);
+}
+
+.promise-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.promise-content h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.promise-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .mission-section {
+        padding: 30px;
+        width: 95%;
+        margin: 40px auto 40px;
+    }
+
+    .mission-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .value-card {
+        padding: 25px;
+    }
+
+    .value-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .service-promises {
+        padding: 25px;
+    }
+
+    .service-promises h3 {
+        font-size: 1.4rem;
+    }
+
+    .promise-list li {
+        padding: 15px;
+    }
+
+    .promise-content h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 调整网格布局的对齐方式 */
+.services-grid,
+.mission-values,
+.inspection-features,
+.maintenance-features,
+.assessment-features {
+    justify-content: center;  /* 网格内容居中 */
+}
+
+/* 调整列表项的对齐方式 */
+.inspection-types li,
+.maintenance-types li,
+.assessment-types li,
+.promise-list li {
+    justify-content: flex-start;  /* 改为左对齐 */
+}
+
+/* 调整文本对齐方式 */
+.service-content,
+.emergency-content,
+.inspection-content,
+.maintenance-content,
+.assessment-content,
+.mission-content {
+    text-align: center;
+}
+
+/* 消防施工部分样式 */
+.construction-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+    text-align: center;
+}
+
+.construction-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.construction-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.construction-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.construction-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-content: center;
+}
+
+.construction-types {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.construction-types h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.construction-types ul {
+    list-style: none;
+    padding: 0;
+}
+
+.construction-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+.construction-types li::before {
+    content: "•";
+    color: #FF5722;  /* 使用橙红色区分施工部分 */
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+.construction-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.construction-features .feature-card {
+    text-align: left;  /* 特性卡片内容左对齐 */
+    padding-left: 25px;  /* 添加左侧内边距 */
+}
+
+.construction-features .feature-card h4 {
+    text-align: left;  /* 标题左对齐 */
+}
+
+.construction-features .feature-card p {
+    text-align: left;  /* 段落左对齐 */
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .construction-section {
+        padding: 30px;
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .construction-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .construction-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .construction-intro {
+        font-size: 1rem;
+    }
+
+    .construction-types {
+        padding: 20px;
+    }
+
+    .construction-types h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 消防项目验收部分样式 */
+.acceptance-section {
+    max-width: 1200px;
+    width: 90%;
+    margin: 60px auto;  /* 保持原有间距 */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+    animation-delay: 0.3s;
+    text-align: center;
+}
+
+.acceptance-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.acceptance-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.acceptance-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.acceptance-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    justify-content: center;
+}
+
+.acceptance-types {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.acceptance-types h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.acceptance-types ul {
+    list-style: none;
+    padding: 0;
+}
+
+.acceptance-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+.acceptance-types li::before {
+    content: "•";
+    color: #9C27B0;  /* 使用紫色区分验收部分 */
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+.acceptance-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .acceptance-section {
+        padding: 30px;
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .acceptance-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .acceptance-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .acceptance-intro {
+        font-size: 1rem;
+    }
+
+    .acceptance-types {
+        padding: 20px;
+    }
+
+    .acceptance-types h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 统一所有项目类型的列表样式 */
+.inspection-types li,
+.maintenance-types li,
+.assessment-types li,
+.acceptance-types li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;  /* 改为左对齐 */
+    padding-left: 20px;  /* 添加左侧内边距 */
+}
+
+/* 统一所有项目类型的点号样式 */
+.inspection-types li::before,
+.maintenance-types li::before,
+.assessment-types li::before,
+.acceptance-types li::before {
+    content: "•";
+    font-size: 1.5em;
+    margin-right: 10px;  /* 添加点号与文字的间距 */
+}
+
+/* 统一所有特性卡片的样式 */
+.inspection-features .feature-card,
+.maintenance-features .feature-card,
+.assessment-features .feature-card,
+.acceptance-features .feature-card {
+    text-align: left;  /* 特性卡片内容左对齐 */
+    padding-left: 25px;  /* 添加左侧内边距 */
+}
+
+/* 统一所有特性卡片的标题样式 */
+.inspection-features .feature-card h4,
+.maintenance-features .feature-card h4,
+.assessment-features .feature-card h4,
+.acceptance-features .feature-card h4 {
+    text-align: left;  /* 标题左对齐 */
+}
+
+/* 统一所有特性卡片的段落样式 */
+.inspection-features .feature-card p,
+.maintenance-features .feature-card p,
+.assessment-features .feature-card p,
+.acceptance-features .feature-card p {
+    text-align: left;  /* 段落左对齐 */
+} 

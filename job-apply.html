@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请职位 - 福瑞锦</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/job-apply.css">
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    <nav class="side-nav">
+        <div class="company-logo">
+            <h1 class="logo-text">福瑞锦</h1>
+        </div>
+        <ul class="nav-menu">
+            <!-- ... 导航菜单 ... -->
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="apply-section">
+            <div class="apply-form-card">
+                <h2>职位申请</h2>
+                <p class="position-title">申请职位：消防工程师</p>
+                
+                <form id="jobApplicationForm" class="application-form">
+                    <div class="form-group">
+                        <label for="name">姓名 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">联系电话 <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">电子邮箱 <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education">最高学历 <span class="required">*</span></label>
+                        <select id="education" name="education" required>
+                            <option value="">请选择</option>
+                            <option value="专科">专科</option>
+                            <option value="本科">本科</option>
+                            <option value="硕士">硕士</option>
+                            <option value="博士">博士</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">工作经验 <span class="required">*</span></label>
+                        <select id="experience" name="experience" required>
+                            <option value="">请选择</option>
+                            <option value="应届生">应届生</option>
+                            <option value="1-3年">1-3年</option>
+                            <option value="3-5年">3-5年</option>
+                            <option value="5年以上">5年以上</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="skills">专业技能</label>
+                        <textarea id="skills" name="skills" rows="4" placeholder="请描述您的专业技能和资格证书"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="introduction">自我介绍</label>
+                        <textarea id="introduction" name="introduction" rows="4" placeholder="请简要介绍您自己"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="resume">上传简历 <span class="required">*</span></label>
+                        <input type="file" id="resume" name="resume" 
+                               accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif" required>
+                        <p class="file-hint">支持 PDF、Word、图片格式，大小不超过 10MB</p>
+                        <div class="file-preview" id="filePreview"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">提交申请</button>
+                        <button type="button" class="cancel-btn" onclick="window.history.back()">返回</button>
+                    </div>
+
+                    <!-- 隐私声明 -->
+                    <div class="privacy-notice">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>我已阅读并同意</span>
+                            <a href="#" class="privacy-link" onclick="showPrivacyPolicy()">隐私政策</a>
+                        </label>
+                    </div>
+
+                    <!-- 帮助和反馈 -->
+                    <div class="help-feedback">
+                        <p>遇到问题？</p>
+                        <div class="help-options">
+                            <a href="tel:18961790898" class="help-link">
+                                <span class="help-icon">📞</span>
+                                <span>电话咨询</span>
+                            </a>
+                            <a href="mailto:furuijinjs@gmail.com" class="help-link">
+                                <span class="help-icon">📧</span>
+                                <span>邮件反馈</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 隐私政策弹窗 -->
+            <div id="privacyModal" class="modal">
+                <div class="modal-content">
+                    <h3>隐私政策</h3>
+                    <div class="privacy-content">
+                        <p>福瑞锦承诺保护您的个人隐私。我们收集的信息将仅用于招聘目的：</p>
+                        <ul>
+                            <li>您提供的个人信息将被安全存储和处理</li>
+                            <li>我们不会向第三方分享您的个人信息</li>
+                            <li>您有权随时要求查看或删除您的申请信息</li>
+                            <li>简历和个人资料将在招聘流程结束后6个月内删除</li>
+                        </ul>
+                    </div>
+                    <button class="close-btn" onclick="closePrivacyPolicy()">关闭</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 添加JavaScript -->
+    <script>
+        // 文件预览功能
+        document.getElementById('resume').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('filePreview');
+            preview.innerHTML = '';
+
+            if (file) {
+                // 检查文件大小
+                if (file.size > 10 * 1024 * 1024) { // 10MB
+                    alert('文件大小不能超过10MB');
+                    this.value = '';
+                    return;
+                }
+
+                // 创建预览元素
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+
+                // 根据文件类型显示不同的预览
+                if (file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(file);
+                    img.onload = function() {
+                        URL.revokeObjectURL(this.src);
+                    }
+                    previewItem.appendChild(img);
+                } else {
+                    const icon = document.createElement('span');
+                    icon.className = 'file-icon';
+                    icon.textContent = getFileIcon(file.name);
+                    previewItem.appendChild(icon);
+                }
+
+                const fileName = document.createElement('span');
+                fileName.className = 'file-name';
+                fileName.textContent = file.name;
+                previewItem.appendChild(fileName);
+
+                preview.appendChild(previewItem);
+                
+                // 添加上传成功提示
+                showUploadSuccess();
+            }
+        });
+
+        // 获取文件图标
+        function getFileIcon(fileName) {
+            const ext = fileName.split('.').pop().toLowerCase();
+            const icons = {
+                'pdf': '📄',
+                'doc': '📝',
+                'docx': '📝',
+                'jpg': '🖼️',
+                'jpeg': '🖼️',
+                'png': '🖼️',
+                'gif': '🖼️'
+            };
+            return icons[ext] || '📎';
+        }
+
+        function showPrivacyPolicy() {
+            document.getElementById('privacyModal').style.display = 'flex';
+        }
+
+        function closePrivacyPolicy() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
+
+        // 表单提交处理
+        document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 这里添加表单提交逻辑
+            alert('申请已提交，我们会尽快与您联系！');
+        });
+
+        // 显示上传成功提示
+        function showUploadSuccess() {
+            const notification = document.createElement('div');
+            notification.className = 'upload-notification';
+            notification.innerHTML = `
+                <span class="success-icon">✓</span>
+                <span class="notification-text">文件上传成功</span>
+            `;
+            document.body.appendChild(notification);
+
+            // 2秒后自动消失
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 2000);
+        }
+    </script>
+</body>
+</html> 

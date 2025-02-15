@@ -1,0 +1,31 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="30" cy="30" r="25" fill="url(#efficiency_bg)"/>
+    <!-- 火箭主体 -->
+    <path d="M30 15L25 40L30 37L35 40L30 15Z" fill="url(#rocket_body)"/>
+    <!-- 火箭翼 -->
+    <path d="M25 40L20 35L25 37L30 37L35 37L40 35L35 40L30 43L25 40Z" 
+          fill="url(#rocket_wings)"/>
+    <!-- 火焰效果 -->
+    <path d="M27 40L30 48L33 40" fill="url(#flame_gradient)"/>
+    <!-- 窗口 -->
+    <circle cx="30" cy="25" r="2" fill="#FFFFFF"/>
+    <defs>
+        <linearGradient id="efficiency_bg" x1="30" y1="5" x2="30" y2="55">
+            <stop offset="0%" stop-color="#FF7043"/>
+            <stop offset="100%" stop-color="#F4511E"/>
+        </linearGradient>
+        <linearGradient id="rocket_body" x1="30" y1="15" x2="30" y2="40">
+            <stop offset="0%" stop-color="#FF8A65"/>
+            <stop offset="100%" stop-color="#FF7043"/>
+        </linearGradient>
+        <linearGradient id="rocket_wings" x1="30" y1="35" x2="30" y2="43">
+            <stop offset="0%" stop-color="#FF8A65"/>
+            <stop offset="100%" stop-color="#FF7043"/>
+        </linearGradient>
+        <linearGradient id="flame_gradient" x1="30" y1="40" x2="30" y2="48">
+            <stop offset="0%" stop-color="#FFD54F"/>
+            <stop offset="100%" stop-color="#FFA726"/>
+        </linearGradient>
+    </defs>
+</svg> 

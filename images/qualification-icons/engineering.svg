@@ -1,0 +1,25 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="25" cy="25" r="20" fill="url(#eng_bg)"/>
+    <!-- 齿轮 -->
+    <path d="M25 15L23 16L21 19L18 20L16 18L14 20L16 23L15 25L12 27L13 30L16 31L18 33L17 36L19 38L22 36L24 37L27 40L30 39L31 36L33 34L36 35L38 33L36 30L37 28L40 25L39 22L36 21L34 19L35 16L33 14L30 16L28 15L25 12L22 13L21 16L19 18L16 17L14 19L16 22L15 24L12 26L13 29L16 30L18 32L17 35L19 37L22 35L24 36L27 39L30 38L31 35L33 33L36 34L38 32L36 29L37 27L40 24L39 21L36 20L34 18L35 15L33 13L30 15L28 14L25 11Z" 
+          fill="url(#gear_gradient)"/>
+    <!-- 内圈 -->
+    <circle cx="25" cy="25" r="6" fill="url(#inner_gradient)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- 中心点 -->
+    <circle cx="25" cy="25" r="2" fill="#FFFFFF"/>
+    <defs>
+        <linearGradient id="eng_bg" x1="25" y1="5" x2="25" y2="45">
+            <stop offset="0%" stop-color="#FF7043"/>
+            <stop offset="100%" stop-color="#F4511E"/>
+        </linearGradient>
+        <linearGradient id="gear_gradient" x1="25" y1="11" x2="25" y2="40">
+            <stop offset="0%" stop-color="#FF8A65"/>
+            <stop offset="100%" stop-color="#FF7043"/>
+        </linearGradient>
+        <linearGradient id="inner_gradient" x1="25" y1="19" x2="25" y2="31">
+            <stop offset="0%" stop-color="#FFAB91"/>
+            <stop offset="100%" stop-color="#FF8A65"/>
+        </linearGradient>
+    </defs>
+</svg> 

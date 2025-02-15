@@ -1,0 +1,24 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="25" cy="25" r="23" fill="url(#timer_bg)"/>
+    
+    <!-- 数字"30" -->
+    <path d="M15 20H22M18.5 17V23" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M25 17C25 20 27 23 30 23C33 23 35 20 35 17C35 14 33 11 30 11C27 11 25 14 25 17Z" 
+          stroke="#FFFFFF" stroke-width="3" fill="none"/>
+    
+    <!-- 箭头 -->
+    <path d="M15 30L25 25L35 30" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M25 25V38" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 光效 -->
+    <circle cx="18" cy="15" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="32" cy="15" r="1.5" fill="#FFFFFF" opacity="0.4"/>
+    
+    <defs>
+        <linearGradient id="timer_bg" x1="25" y1="2" x2="25" y2="48">
+            <stop offset="0%" stop-color="#00C853"/>
+            <stop offset="100%" stop-color="#009624"/>
+        </linearGradient>
+    </defs>
+</svg> 

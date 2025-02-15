@@ -1,0 +1,27 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 盾牌底部阴影 -->
+    <path d="M20 5L5 12V20C5 27.4 11 34.3 20 36.7C29 34.3 35 27.4 35 20V12L20 5Z" 
+          fill="#2C5AA0" opacity="0.2"/>
+    <!-- 盾牌主体 -->
+    <path d="M20 3L5 10V18C5 25.4 11 32.3 20 34.7C29 32.3 35 25.4 35 18V10L20 3Z" 
+          fill="url(#shield_gradient)"/>
+    <!-- 内部装饰 -->
+    <path d="M31 18C31 23.9 26.2 29.3 20 31.4V20H9V12.2L20 7.1L31 12.2V18Z" 
+          fill="url(#inner_gradient)"/>
+    <!-- 对勾装饰 -->
+    <path d="M17 23L15 21L13 23L17 27L25 19L23 17L17 23Z" 
+          fill="#4CAF50" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- 光效装饰 -->
+    <circle cx="15" cy="12" r="2" fill="#FFFFFF" opacity="0.6"/>
+    <!-- 渐变定义 -->
+    <defs>
+        <linearGradient id="shield_gradient" x1="20" y1="3" x2="20" y2="34.7">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#2C5AA0"/>
+        </linearGradient>
+        <linearGradient id="inner_gradient" x1="20" y1="7.1" x2="20" y2="31.4">
+            <stop offset="0%" stop-color="#5C9CE6"/>
+            <stop offset="100%" stop-color="#4A90E2"/>
+        </linearGradient>
+    </defs>
+</svg> 

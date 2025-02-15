@@ -1,0 +1,289 @@
+/* 招聘信息页面样式 */
+.jobs-section {
+    padding: 40px 40px 40px 40px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    min-width: 100%;
+    height: 100%;
+}
+
+/* 添加背景光效 */
+.jobs-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 98, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(41, 98, 255, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 主内容区样式 */
+.main-content {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+
+/* 招聘信息介绍卡片样式 */
+.jobs-intro-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    color: #fff;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.jobs-intro-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.jobs-intro-card .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 职位列表样式 */
+.job-positions {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.job-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.job-header h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.job-tag {
+    background: rgba(33, 150, 243, 0.3);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.job-details {
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+}
+
+.detail-item p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.job-requirements {
+    margin-bottom: 25px;
+}
+
+.job-requirements h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.job-requirements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.job-requirements li {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.job-requirements li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2196F3;
+}
+
+.apply-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: #1976D2;
+}
+
+/* 申请流程样式 */
+.application-process {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.application-process h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.step {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.step h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .jobs-section {
+        padding: 20px;
+    }
+
+    .jobs-intro-card,
+    .job-positions,
+    .application-process {
+        width: 95%;
+    }
+
+    .jobs-intro-card {
+        padding: 30px;
+    }
+
+    .jobs-intro-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .job-card {
+        padding: 25px;
+    }
+
+    .job-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .application-process {
+        padding: 30px;
+    }
+
+    .application-process h3 {
+        font-size: 1.6rem;
+    }
+
+    .step {
+        padding: 15px;
+    }
+} 

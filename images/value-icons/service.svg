@@ -1,0 +1,20 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="30" cy="30" r="25" fill="url(#service_bg)"/>
+    <!-- 手掌形状 -->
+    <path d="M20 35C20 40 25 44 30 44C35 44 40 40 40 35C40 30 35 28 35 28C35 31 30 31 30 28V20C30 18.3431 28.6569 17 27 17C25.3431 17 24 18.3431 24 20V33" 
+          fill="url(#hand_gradient)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- 心形装饰 -->
+    <path d="M27 24C27 22 28 21 29 21C30 21 31 22 31 24C31 26 29 27 29 27C29 27 27 26 27 24Z" 
+          fill="#FF4081"/>
+    <defs>
+        <linearGradient id="service_bg" x1="30" y1="5" x2="30" y2="55">
+            <stop offset="0%" stop-color="#EC407A"/>
+            <stop offset="100%" stop-color="#D81B60"/>
+        </linearGradient>
+        <linearGradient id="hand_gradient" x1="30" y1="17" x2="30" y2="44">
+            <stop offset="0%" stop-color="#F48FB1"/>
+            <stop offset="100%" stop-color="#EC407A"/>
+        </linearGradient>
+    </defs>
+</svg> 
